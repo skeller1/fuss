@@ -1,0 +1,10 @@
+<ul style="list-style-type:none;">
+<% @days.keys.each do |d| %>
+	<% @days[d].each_slice(4) do |g| %>
+		<% if params[:teams].include?g[2] or params[:teams].include?g[3] %>
+			<li><%= d %> <%= g[1] %> Uhr: <%= g[2] %> - <%= g[3] %></li>
+		<% end %>
+	<% end %>
+<% end %>
+</ul>
+<!--<h2><%#= d %></h2>-->

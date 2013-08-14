@@ -1,0 +1,6 @@
+<h1>Ligagesamtspielplan</h1>
+
+<%= form_tag "/league" do %>
+  <%= text_field_tag "url","http://ergebnisdienst.fussball.de/staffelspielplan/vogtlandklasse/kreis-vogtland/kreisliga-a/herren/spieljahr1314/sachsen/-/staffel/01HHAGMMFG000000VV0AG812VU110IET-G/mandant/63", size: 130 %>
+  <%= submit_tag "Weiter" %>
+<% end %>

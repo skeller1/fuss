@@ -1,0 +1,24 @@
+<!--
+<%#= @duys.inspect %>
+<ul style="list-style-type:none;">
+<% @days.keys.each do |d| %>
+	<h2><%= d %></h2>
+	<% @days[d].each_slice(4) do |g| %>
+		<li><%= g[1] %> Uhr: <%= g[2] %> - <%= g[3] %></li>
+	<% end %>
+<% end %>
+</ul>-->
+
+<%#= @teams.size %>
+
+<%= form_tag "/list" do %>
+	<% @teams.each_with_index do |t,i| %>
+		<p><%= check_box_tag "team[]", t %><%= label_tag "team_#{i}", t %></p>
+	<% end %>
+
+	<%= hidden_field_tag "url", @url %>
+	<%= submit_tag "Teams auswählen und weiter" %>
+
+
+
+<% end %>
