@@ -8,6 +8,11 @@ gem 'sqlite3', group: :development
 
 gem 'pg', group: :production
 
+
+
+gem 'therubyracer', group: :development
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -47,3 +52,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'nokogiri'
+gem 'tesseract-ocr'
+gem 'mini_magick'
