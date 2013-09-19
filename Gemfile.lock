@@ -40,6 +40,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    extr (1.0.4)
+      rails (> 3.0)
     ffi (1.9.0)
     ffi-extra (0.1.0)
       ffi
@@ -134,6 +136,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  extr
   jbuilder (~> 1.2)
   jquery-rails
   mini_magick
