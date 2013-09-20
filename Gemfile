@@ -54,5 +54,4 @@ end
 gem 'nokogiri'
 #gem 'tesseract-ocr'
 gem 'mini_magick'
-gem 'extr'
 
