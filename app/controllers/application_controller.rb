@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 	file = Tempfile.new('foo')
 	puts cmd = "tesseract ./public/original.png #{file.path}"		
 	
-	`#{cmd}`
+	system(cmd)
 
 	
 	r=File.open(file.path+".txt")
