@@ -9,7 +9,22 @@ class ApplicationController < ActionController::Base
 
 
  def index
+	file = Tempfile.new('foo')
+	puts cmd = "tesseract ./public/original.png #{file.path}"		
+	
+	`#{cmd}`
 
+	
+	r=File.open(file.path+".txt")
+	file.unlink		
+	@output = r.read
+
+	r.close
+
+	#file.close
+	#file.unlink
+		
+	#@output =`tesseract #{Rails.root.join("public/original.png")} test 2>&1`
  end
 
  def list
