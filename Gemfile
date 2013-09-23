@@ -52,6 +52,6 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'nokogiri'
-#gem 'tesseract-ocr'
+gem 'tesseract-ocr'
 gem 'mini_magick'
 
