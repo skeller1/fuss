@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  match_date: 2013-09-23 20:19:12
+  match_id: MyString
+  home: MyString
+  visitor: MyString
+  goals_home: 1
+  goals_visitor: 1
+
+two:
+  match_date: 2013-09-23 20:19:12
+  match_id: MyString
+  home: MyString
+  visitor: MyString
+  goals_home: 1
+  goals_visitor: 1

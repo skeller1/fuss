@@ -56,4 +56,11 @@ end
 gem 'nokogiri'
 #gem 'tesseract-ocr'
 gem 'mini_magick'
+gem 'rufus-scheduler'
+
+
+
+
+
+gem 'rails-observers'
 

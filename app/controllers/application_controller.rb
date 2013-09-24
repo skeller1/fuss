@@ -5,21 +5,22 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :get_page, :except => :index
+  #before_filter :get_page, :except => :index
 
 
  def index
-	file = Tempfile.new('foo')
-	puts cmd = "tesseract ./public/original.png #{file.path}"		
 	
-	system(cmd)
+	#file = Tempfile.new('foo')
+	#puts cmd = "tesseract ./public/original.png #{file.path}"		
+	
+	#system(cmd)
 
 	
-	r=File.open(file.path+".txt")
-	file.unlink		
-	@output = r.read
+	#r=File.open(file.path+".txt")
+	#file.unlink		
+	#@output = r.read
 
-	r.close
+	#r.close
 
 	#file.close
 	#file.unlink

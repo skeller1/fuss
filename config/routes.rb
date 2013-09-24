@@ -1,4 +1,13 @@
 Fuss::Application.routes.draw do
+
+  root 'clubs#index'
+
+  resources :matches
+
+  resources :teams
+
+  resources :clubs
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,11 +63,11 @@ Fuss::Application.routes.draw do
   #     resources :products
   #   end
 
-  root 'application#index'
 
-  post 'league' => 'application#league'
 
-  post 'list' => 'application#list'
+  #post 'league' => 'application#league'
+
+  #post 'list' => 'application#list'
 
 
 end
