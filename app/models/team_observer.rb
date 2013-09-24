@@ -108,7 +108,8 @@ class TeamObserver < ActiveRecord::Observer
 							image.crop("#{width}x#{height}+#{left}+#{top}")
 							image.normalize
 							image.negate
-							#image.brightness_contrast('-50')
+							# image magick on heroku creates black image, only use this for local testing							
+							image.brightness_contrast('-50') if Rails.env.development?
 							image.threshold('31%')
 							image.resize('500x')
 							image_path = Rails.root.join("tmp/#{SecureRandom.hex(10)}.png")
