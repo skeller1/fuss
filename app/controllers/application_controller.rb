@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  http_basic_authenticate_with name: ENV["USER"], password: ENV["PASSWORD"]
+  #http_basic_authenticate_with name: ENV["USER"], password: ENV["PASSWORD"]
 
   #before_filter :get_page, :except => :index
 
@@ -125,7 +125,7 @@ class ApplicationController < ActionController::Base
 								# image magick on heroku creates black image, only use this for local testing							
 								image.brightness_contrast('-50') if Rails.env.development?
 								image.threshold('31%')
-								image.resize('500x')
+								image.resize('400x')
 								image_path = Rails.root.join("tmp/#{SecureRandom.hex(10)}.png")
 								image.write(image_path)
 								#puts "w: #{width}; h: #{height}; l: #{left}; t: #{top} mit #{img["src"]}"			
