@@ -13,6 +13,7 @@ class TeamObserver < ActiveRecord::Observer
 		home = ""
 		visitor = ""
 		result = ""
+		save_path_image = ""
 
 		@days={}
 		@teams =[]
@@ -30,6 +31,7 @@ class TeamObserver < ActiveRecord::Observer
 				home = ""
 				visitor = ""
 				result = ""
+				save_path_image = ""
 				Rails.logger.info "#{i} hat keinen vorgänger, start"
 			end
 
@@ -43,6 +45,7 @@ class TeamObserver < ActiveRecord::Observer
 				home = ""
 				visitor = ""
 				result = ""
+				save_path_image = ""
 				
 				@days[league_day]=[]
     			else
@@ -98,6 +101,7 @@ class TeamObserver < ActiveRecord::Observer
 							r = img["style"].match(/top: -?(\d+)px/)
 							top = r[1] if r.present?
 							
+							save_path_image = img["src"]
 							image = MiniMagick::Image.open(img["src"])
 							#image.crop('Width Image x Height Image+ Versatz x(Left)+Versatz y(Top)')							
 							image.alpha('Off')
@@ -148,7 +152,8 @@ class TeamObserver < ActiveRecord::Observer
 						result = result.split(":")
 						m.goals_home = result.first.to_i 
 						m.goals_visitor = result.last.to_i
-					end					
+					end
+					m.result_image_path = save_path_image					
 					m.save
 					# if match_id.length == 3
 					#i=0

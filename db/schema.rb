@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20130923181912) do
     t.string   "visitor"
     t.integer  "goals_home"
     t.integer  "goals_visitor"
+    t.string   "result_image_path"
     t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"

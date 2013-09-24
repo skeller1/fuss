@@ -7,6 +7,7 @@ class CreateMatches < ActiveRecord::Migration
       t.string :visitor
       t.integer :goals_home
       t.integer :goals_visitor
+      t.string :result_image_path
       t.references :team
       t.timestamps
     end
