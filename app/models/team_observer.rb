@@ -1,7 +1,6 @@
 class TeamObserver < ActiveRecord::Observer
   def after_create(team)
 	
-	if team.url == "http://ergebnisdienst.fussball.de/staffelspielplan/vogtlandklasse/kreis-vogtland/kreisliga-a/herren/spieljahr1314/sachsen/-/staffel/01HHAGMMFG000000VV0AG812VU110IET-G/mandant/63"
 	taggler = Rufus::Scheduler.new
 	taggler.in '3s' do
   		puts "Team Oberserver after create started. Get teams"
@@ -207,9 +206,6 @@ class TeamObserver < ActiveRecord::Observer
 
 	end
 
-	#end if only one writing to record
-	end
-  
    #end after create
    end
 
