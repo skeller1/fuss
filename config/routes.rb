@@ -8,7 +8,8 @@ Fuss::Application.routes.draw do
 
   resources :clubs
 
-
+  get "update" => 'application#update'
+	  
   get "bild" => 'application#image'
 
   # The priority is based upon order of creation: first created -> highest priority.
