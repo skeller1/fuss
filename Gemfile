@@ -11,6 +11,9 @@ gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
 
+group :production do
+  gem 'rails_12factor'
+end
 
 gem 'therubyracer', group: :development
 
