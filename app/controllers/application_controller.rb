@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
   #before_filter :get_page, :except => :index
 
 
+
+ def image
+	@images = Dir.glob(Rails.root.join("tmp/*.png"))
+ end
+
+
  def index
 	
 	#file = Tempfile.new('foo')

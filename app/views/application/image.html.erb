@@ -1,0 +1,12 @@
+<ul>
+<%= @images.each do |image| %>
+
+	<% raw_img_data= nil
+   	open(image) do |f| raw_img_data= f.read end
+   base_64_img_data= Base64.encode64(raw_img_data) %>
+    	
+	<li>
+		<img src="data:image/png;base64,<%= base_64_img_data %>" />
+	</li>
+<% end %>
+</ul>

@@ -111,7 +111,7 @@ class TeamObserver < ActiveRecord::Observer
 							image.brightness_contrast('-50')
 							image.threshold('31%')
 							image.resize('500x')
-							image_path = Rails.root.join("tmp/#{SecureRandom.hex(10)}.jpg")
+							image_path = Rails.root.join("tmp/#{SecureRandom.hex(10)}.png")
 							image.write(image_path)
 							#puts "w: #{width}; h: #{height}; l: #{left}; t: #{top} mit #{img["src"]}"			
 
