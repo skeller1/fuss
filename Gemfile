@@ -45,6 +45,9 @@ group :doc do
 end
 
 gem 'rails-i18n'
+
+gem 'thin', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
