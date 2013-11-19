@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
 	taggler = Rufus::Scheduler.new
 	taggler.in '3s' do
 
+		Match.delete_all
+
 
 		Team.all.each do |team|	
 
