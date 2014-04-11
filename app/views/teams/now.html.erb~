@@ -1,0 +1,8 @@
+Aktueller Spieltag <%= @team.name %>
+
+
+
+<% @matches.each_with_index do |m,i| %>
+	<p><%= i %>: <%= m.home %> - <%= m.visitor %></p>
+
+<% end %>

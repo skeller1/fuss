@@ -1,10 +1,29 @@
 class MatchesController < ApplicationController
-  before_action :set_match, only: [:show, :edit, :update, :destroy]
+  before_action :set_match, only: [:show, :edit, :update, :destroy, :tesseract, :fussball]
 
   # GET /matches
   # GET /matches.json
   def index
     @matches = Match.all
+  end
+
+
+  def tesseract
+	send_file(
+		@match.temp_image_path,
+      		disposition: 'attachment',
+      		type: 'image/png',
+		filename: 'image'
+	)
+  end
+
+  def fussball
+	send_file(
+		@match.orig_image_path,
+      		disposition: 'attachment',
+      		type: 'image/png',
+		filename: 'orig'
+	)
   end
 
   # GET /matches/1

@@ -4,7 +4,6 @@ Fuss::Application.routes.draw do
 
   resources :matches do
    get 'tesseract', on: :member
-   get 'fussball', on: :member
   end
 
   resources :teams do

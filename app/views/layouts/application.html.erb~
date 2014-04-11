@@ -11,7 +11,7 @@
 <%= yield %>
 
 
-<%= link_to 'Ergebisse aktualsieren', '/update' %>
+<%= link_to 'Ergebisse aktualsieren', 'update' %>
 
 </body>
 </html>

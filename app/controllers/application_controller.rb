@@ -30,7 +30,8 @@ class ApplicationController < ActionController::Base
 			visitor = ""
 			result = ""
 			save_path_image = ""
-
+			temp_path_image = ""
+			orig_path_image = ""
 			@days={}
 			@teams =[]
 
@@ -119,9 +120,13 @@ class ApplicationController < ActionController::Base
 							
 								save_path_image = img["src"]
 								image = MiniMagick::Image.open(img["src"])
-								#image.crop('Width Image x Height Image+ Versatz x(Left)+Versatz y(Top)')							
+								#image.crop('Width Image x Height Image+ Versatz x(Left)+Versatz y(Top)')								
+								image.crop("#{width}x#{height}+#{left}+#{top}")								
+								orig_path_image = Rails.root.join("tmp/#{SecureRandom.hex(10)}.png").to_s
+								image.write(orig_path_image)
+
 								image.alpha('Off')
-								image.crop("#{width}x#{height}+#{left}+#{top}")
+								
 								image.normalize
 								image.negate
 								# image magick on heroku creates black image, only use this for local testing							
@@ -136,7 +141,8 @@ class ApplicationController < ActionController::Base
 								cmd = "tesseract #{image_path} #{file.path}"		
 	
 								system(cmd)
-
+								
+								temp_path_image = image_path.to_s
 	
 								r=File.open(file.path+".txt")
 								file.unlink		
@@ -170,7 +176,9 @@ class ApplicationController < ActionController::Base
 							m.goals_home = result.first.to_i 
 							m.goals_visitor = result.last.to_i
 						end
-						m.result_image_path = save_path_image					
+						m.result_image_path = save_path_image
+						m.temp_image_path = temp_path_image					
+						m.orig_image_path = orig_path_image						
 						m.save
 						# if match_id.length == 3
 						#i=0

@@ -1,0 +1,18 @@
+Spielplan <%= @team.name %>
+<% @matches.each_with_index do |m,i| %>
+	<p>Spieltag <%= i+1 %> (Match ID: <%= m.id %>): <%= m.home %> - <%= m.visitor %> [<%= m.goals_home %> : <%= m.goals_visitor %>]
+<%= link_to "Tesseract", tesseract_match_path(m) %> | <%= link_to "Original", fussball_match_path(m) %></p>
+<% end %>
+
+
+
+
+<h1><%= @spiele %> Spiele</h1>
+<h1><%= @tore %> Tore</h1>
+<h1><%= @gegentore %> Gegentore</h1>
+<h1><%= @tore-@gegentore %></h1>
+<h1><%= @siege %> Siege</h1>
+<h1><%= @unentschieden %> Unentschieden</h1>
+<h1><%= @niederlagen %> Niederlagen</h1>
+<h1><%= @punkte %> Punkte</h1>
+

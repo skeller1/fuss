@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923181912) do
+ActiveRecord::Schema.define(version: 20140410152109) do
 
   create_table "clubs", force: true do |t|
     t.string   "url"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20130923181912) do
     t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "temp_image_path"
+    t.string   "orig_image_path"
   end
 
   create_table "teams", force: true do |t|

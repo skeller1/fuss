@@ -29,7 +29,3 @@
 <br>
 
 <%= link_to 'New Club', new_club_path %>
-
-
-
-<%= link_to 'Verfügbare Teams', teams_path %>
