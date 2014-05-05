@@ -137,7 +137,7 @@ class ApplicationController < ActionController::Base
 								image.write(image_path)
 								#puts "w: #{width}; h: #{height}; l: #{left}; t: #{top} mit #{img["src"]}"			
 
-								file = Tempfile.new('foo')
+								file = Tempfile.new('foo',Rails.root.join("tmp"))
 								cmd = "tesseract #{image_path} #{file.path}"		
 	
 								system(cmd)
